@@ -1,0 +1,7 @@
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\bin\Release\EEBotZ.dll
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\bin\Release\EEBotZ.pdb
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\bin\Release\PlayerIOClient.dll
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\bin\Release\PlayerIOClient.xml
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\obj\Release\EEBotZ.dll
+C:\Users\Ethan\repos\EEBotMaker\EEBotZ\EEBotZ\obj\Release\EEBotZ.pdb
