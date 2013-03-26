@@ -1,0 +1,4809 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EEBotZ</name>
+    </assembly>
+    <members>
+        <member name="T:EEBotZ.EEConn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.client">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.conn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.gameID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.Manager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.MapData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.Version">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.EEConn.ListenForPackets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.Connect(System.String,System.String)">
+            <summary>
+            Sign in as a registered user.
+            </summary>
+            <param name="email">The email registered with the account.</param>
+            <param name="password">The password registered with the account.</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Connect_Facebook(System.String)">
+            <summary>
+            Sign in with Facebook.
+            </summary>
+            <param name="accessToken">The access token of the Facebook account.</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Connect_Kongregate(System.String,System.String)">
+            <summary>
+            Sign in with Kongregate.
+            </summary>
+            <param name="userID">The UserID of the Kongregate account.</param>
+            <param name="gameAuthToken">The authentication token of the Kongregate account.</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.LogIn(PlayerIOClient.Client)">
+            <summary>
+            Successful logging in.
+            </summary>
+            <param name="c">client</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.FailLogIn(PlayerIOClient.PlayerIOError)">
+            <summary>
+            Failed logging in.
+            </summary>
+            <param name="e">error</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.JoinWorld(System.String)">
+            <summary>
+            Join an existing world currently in the Lobby.
+            </summary>
+            <param name="worldID">The WorldID of the world.</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.CreateWorld(System.String,System.String,System.Boolean)">
+            <summary>
+            Create a non-existing world. Or open a saved world not currently in the Lobby.
+            </summary>
+            <param name="worldID">The World ID of the world.</param>
+            <param name="worldType">The type of the world.</param>
+            <param name="visible">Will this world be visible in the Lobby?</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.CreateJoinWorld(System.String,System.String,System.Boolean)">
+            <summary>
+            Create a world, then join it. If the world already exists, then just join it.
+            </summary>
+            <param name="worldID">The World ID of the world.</param>
+            <param name="worldType">The type of the world.</param>
+            <param name="visible">Will this world be visible in the Lobby?</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Join(PlayerIOClient.Connection)">
+            <summary>
+            
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.FailJoin(PlayerIOClient.PlayerIOError)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Create(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.FailCreate(PlayerIOClient.PlayerIOError)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Send(System.String,System.Object[])">
+            <summary>
+            This is the summary.
+            </summary>
+            <param name="type">This is the type parameter.</param>
+            <param name="parameters">These are the parameters of the message.</param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Send(EEBotZ.Packet)">
+            <summary>
+            
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Init">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.Say(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.QuickChat(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Move(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="Position_X"></param>
+            <param name="Position_Y"></param>
+            <param name="Velocity_X"></param>
+            <param name="Velocity_Y"></param>
+            <param name="Acceleration_X"></param>
+            <param name="Acceleration_Y"></param>
+            <param name="RightArrowKey"></param>
+            <param name="DownArrowKey"></param>
+            <param name="Gravity"></param>
+            <param name="SpaceBar"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Teleport(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.Jump">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.Access(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.conn_OnDisconnect(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.conn_OnMessage(System.Object,PlayerIOClient.Message)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.AddWorldKeyListener">
+            <summary>
+            Adds the WorldKeyListener.
+            If the connection receives the "init" packet, it will be able to send packets that require the worldKey.
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.WorldKeyListener(System.Object,PlayerIOClient.Message)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.AddListUsers">
+            <summary>
+            Adds the ListUsers feature.
+            The bot will keep a list of users currently in the world via User[] users.
+            </summary>
+        </member>
+        <member name="M:EEBotZ.EEConn.listUsers(System.Object,PlayerIOClient.Message)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:EEBotZ.EEConn.ListAllRooms(System.Int32,System.Int32)">
+            <summary>
+            List all rooms visible in the lobby.
+            </summary>
+            <param name="resultLimit">limit how many results to list (use 0 to list as many as possible)</param>
+            <param name="resultOffset">the offset into the list</param>
+            <returns>a list of all rooms in the lobby</returns>
+        </member>
+        <member name="M:EEBotZ.EEConn.ListRooms(System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.Int32)">
+            <summary>
+            List all rooms in the lobby that match certain criteria.
+            </summary>
+            <param name="searchCriteria">search criteria</param>
+            <param name="resultLimit">limit how many results to list (use 0 to list as many as possible)</param>
+            <param name="resultOffset">the offset into the list</param>
+            <returns>a list of all rooms in the lobby that match the criteria</returns>
+        </member>
+        <member name="M:EEBotZ.EEConn.Rot13(System.String)">
+            <summary>
+            Performs the Rot13 encryption/decryption algorithm.
+            </summary>
+            <param name="str">The string to encrypt/decrypt.</param>
+            <returns>The encrypted/decrypted string.</returns>
+        </member>
+        <member name="P:EEBotZ.EEConn.WorldKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.EEConn.isConnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.EEConn.isJoinedWorld">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnConnect">
+            <summary>
+            Triggered when bot gets connected to the server. (after using Connect, etc)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnFailConnect">
+            <summary>
+            Triggered when bot gets connected to the server. (after using Connect, etc)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnJoinWorld">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnFailJoinWorld">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnCreateWorld">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnFailCreateWorld">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.GotWorldKey">
+            <summary>
+            Triggered when bot retrieves the WorldKey.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnPacket">
+            <summary>
+            Triggered when any packet is received.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnOther">
+            <summary>
+            Triggered when no OnTypeEventHandler can triggered.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnDisconnect">
+            <summary>
+            Triggered when bot gets disconnected.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnInit">
+            <summary>
+            Triggered when "init" packet is received.
+            [0] owner of world (string)
+            [1] name of world (string)
+            [2] number of plays (string)
+            [3] encrypted WorldKey (string
+            [4] bot's user ID (int)
+            [5] spawn position X (double)
+            [6] spawn position Y (double)
+            [7] bot's user name (string)
+            [8] can edit? (bool)
+            [9] is owner? (bool)
+            [10] world dimension X (int)
+            [11] world dimension Y (int)
+            [12] tutorial room (bool)
+            [13] gravity (double)
+            [14] allow potions (bool)
+            [15] "ws" (string)
+            .... map data (see documentation for more info)
+            [??] "we" (string)
+            [??] "ps" (string)
+            .... potion data (see documentation for more info)
+            [??] "pe" (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnAdd">
+            <summary>
+            Triggered when a user joins the world.
+            [0] user ID (int)
+            [1] user name (string)
+            [2] smiley ID (int)
+            [3] spawn position X (double)
+            [4] spawn position Y (double)
+            [5] god mode? (bool)
+            [6] mod mode? (bool)
+            [7] has chat? (bool)
+            [8] number of coins (int)
+            [9] ??? (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnLeft">
+            <summary>
+            Triggered when a user has left the world.
+            [0]  user ID (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnGod">
+            <summary>
+            Triggered when a user goes in or out of god mode.
+            [0] user ID (int)
+            [1] god mode? (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnMod">
+            <summary>
+            Triggered when a user goes in or out of mod mode.
+            [0] user ID (int)
+            [1] mod mode? (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnSay">
+            <summary>
+            Triggered when a user chats a packet.
+            [0] user ID (int)
+            [1] chat message (string)
+            [2] ??? (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnSayOld">
+            <summary>
+            Triggered when displaying chat messages before the bot arrived.
+            [0] user name (string)
+            [1] chat message (string)
+            [2] ??? (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnWrite">
+            <summary>
+            Triggered when *System chats a message.
+            [0] prefix (string)
+            [1] chat message (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnQuickChat">
+            <summary>
+            Triggered when a user uses the quick-chat.
+            [0] user ID (int)
+            [1] chat message (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnMove">
+            <summary>
+            Triggered when a user moves.
+            [0] user ID (int)
+            [1] position X (double)
+            [2] position Y (double)
+            [3] velocity X (double)
+            [4] velocity Y (double)
+            [5] acceleration X (double)
+            [6] acceleration Y (double)
+            [7] key down X (int)
+            [8] key down Y (int)
+            [9] number of coins (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnBlock">
+            <summary>
+            Triggered when a block is built.
+            [0] layer (int)
+            [1] position X (int)
+            [2] position Y (int)
+            [3] block ID (int)
+            [4] number of coins (int) for coin door/gate
+            [5] note (int) for piano/drum
+            [6] orientation (int) for portal
+            [7] this ID (int) for portal
+            [8] target ID (int) for portal
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnFace">
+            <summary>
+            Triggered when a user changes his/her smiley.
+            [0] user ID (int)
+            [1] smiley ID (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnCrown">
+            <summary>
+            Triggered when a user gets the crown.
+            [0] user ID (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnWin">
+            <summary>
+            Triggered when a user wins the level.
+            [0] user ID (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnCoin">
+            <summary>
+            Triggered when a user gets a coin.
+            [0] user ID (int)
+            [1] number of coins (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnHide">
+            <summary>
+            Triggered when doors hide and gates show.
+            [0] "red", "blue", "green", "purple", or "timedoor" (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnShow">
+            <summary>
+            Triggered when doors show and gates hide.
+            [0] "red", "blue", "green", "purple", or "timedoor" (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnAccess">
+            <summary>
+            Triggered when bot gains access to edit the level.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnLostAccess">
+            <summary>
+            Triggered when the world code changes. Bot can no longer edit.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnSave">
+            <summary>
+            Triggered when the world is saved.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnClear">
+            <summary>
+            Triggered when the world is cleared.
+            [0] world dimension X (int)
+            [1] world dimension Y (int)
+            [2] border block ID (int)
+            [3] ??? (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnLoadLevel">
+            <summary>
+            Triggered when the world is loaded.
+            [1] "ws" (string)
+            ... map data (see documentation for more info)
+            [?] "we" (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnReset">
+            <summary>
+            Triggered when the world is reset.
+            [0] ??? (bool)
+            [1] user ID (int)
+            [2] spawn position X (double)
+            [3] spawn position Y (double)
+            ... The pattern of [1],[2],[3] continues for all users in the world.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnChangeName">
+            <summary>
+            Triggered when name of world is changed.
+            [0] owner of world (string)
+            [1] name of world (string)
+            [2] number of plays (int)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnInfo">
+            <summary>
+            Triggered when server sends an info box.
+            [0] title (string)
+            [1] message (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnGroupDisallowedJoin">
+            <summary>
+            Triggered when bot attempts to (but cannot) enter a world.
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnPotion">
+            <summary>
+            Triggered when a player uses a potion, or when a potion wears off.
+            [0] user ID (int)
+            [1] potion ID (int)
+            [2] active (bool)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnText">
+            <summary>
+            Triggered when a mod writes text in the world.
+            [0] X position (int)
+            [1] Y position (int)
+            [2] text (string)
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnUpgrade">
+            <summary>
+            Triggered when game gets upgraded.
+            </summary>
+        </member>
+        <member name="T:EEBotZ.VersionInfo">
+            <summary>
+            Info regarding the version of this version of the EEBotZ class library.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.VersionInfo.versionNumber">
+            <summary>
+            The version number of this EEBotZ class library.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.VersionInfo.dateCreated">
+            <summary>
+            The date which this version of EEBotZ was created.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.VersionInfo.author">
+            <summary>
+            The author of the EEBotZ class library.
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks">
+            <summary>
+            A class containing the ID numbers for all blocks.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Nothing">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Empty">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Erase">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Crown">
+            <summary>
+            = 5
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Win">
+            <summary>
+            = 121
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Diamond">
+            <summary>
+            = 241
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Portal">
+            <summary>
+            = 242
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spawn">
+            <summary>
+            = 255
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cake">
+            <summary>
+            = 337
+            </summary>
+        </member>
+        <member name="M:EEBotZ.Blocks.Layer(System.Int32)">
+            <summary>
+            Returns the layer of the block.
+            Returns 0 for foreground.
+            Returns 1 for background.
+            Note: if BlockID = 0, this function will return 0.
+            </summary>
+            <param name="BlockID">The ID number of the block.</param>
+            <returns>The layer of the block.</returns>
+        </member>
+        <member name="T:EEBotZ.Blocks.Gravity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gravity.Down">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gravity.Left">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gravity.Up">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gravity.Right">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gravity.Dot">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Keys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Keys.Red">
+            <summary>
+            = 6
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Keys.Green">
+            <summary>
+            = 7
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Keys.Blue">
+            <summary>
+            = 8
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Keys.Purple">
+            <summary>
+            = 113
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Doors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Red">
+            <summary>
+            = 23
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Green">
+            <summary>
+            = 24
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Blue">
+            <summary>
+            = 25
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Coin">
+            <summary>
+            = 43
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Timed">
+            <summary>
+            = 156
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Doors.Purple">
+            <summary>
+            = 184
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Gates">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Red">
+            <summary>
+            = 26
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Green">
+            <summary>
+            = 27
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Blue">
+            <summary>
+            = 28
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Coin">
+            <summary>
+            = 165
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Timed">
+            <summary>
+            = 157
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Gates.Purple">
+            <summary>
+            = 185
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Timed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timed.Door">
+            <summary>
+            = 156
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timed.Gate">
+            <summary>
+            = 157
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Basic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Basic.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Gray">
+            <summary>
+            = 9
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Blue">
+            <summary>
+            = 10
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Magenta">
+            <summary>
+            = 11
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Red">
+            <summary>
+            = 12
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Yellow">
+            <summary>
+            = 13
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Green">
+            <summary>
+            = 14
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Cyan">
+            <summary>
+            = 15
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.Block.Black">
+            <summary>
+            = 182
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Basic.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Gray">
+            <summary>
+            = 500
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Blue">
+            <summary>
+            = 501
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Magenta">
+            <summary>
+            = 502
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Red">
+            <summary>
+            = 503
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Yellow">
+            <summary>
+            = 504
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Green">
+            <summary>
+            = 505
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Basic.BG.Cyan">
+            <summary>
+            = 506
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Brick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Brick.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Orange">
+            <summary>
+            = 16
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Teal">
+            <summary>
+            = 17
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Purple">
+            <summary>
+            = 18
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Green">
+            <summary>
+            = 19
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Red">
+            <summary>
+            = 20
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.Block.Brown">
+            <summary>
+            = 21
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Brick.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Orange">
+            <summary>
+            = 507
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Teal">
+            <summary>
+            = 508
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Purple">
+            <summary>
+            = 509
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Green">
+            <summary>
+            = 510
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Red">
+            <summary>
+            = 511
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Brick.BG.Brown">
+            <summary>
+            = 512
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Special">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Special.Black">
+            <summary>
+            = 33
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Special.FullyBlack">
+            <summary>
+            = 44
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Special.Hazard">
+            <summary>
+            = 22
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Special.Smiley">
+            <summary>
+            = 32
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Metal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Metal.Gold">
+            <summary>
+            = 31
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Metal.Silver">
+            <summary>
+            = 29
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Metal.Bronze">
+            <summary>
+            = 30
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Grass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Grass._1">
+            <summary>
+            = 34
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Grass._2">
+            <summary>
+            = 35
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Grass._3">
+            <summary>
+            = 36
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Beta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Purple">
+            <summary>
+            = 37
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Green">
+            <summary>
+            = 38
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Blue">
+            <summary>
+            = 39
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Red">
+            <summary>
+            = 40
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Yellow">
+            <summary>
+            = 41
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Beta.Gray">
+            <summary>
+            = 42
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Factory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Factory.DullCrate">
+            <summary>
+            = 45
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Factory.Wall">
+            <summary>
+            = 46
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Factory.Wood">
+            <summary>
+            = 47
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Factory.Crate">
+            <summary>
+            = 48
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Factory.Scales">
+            <summary>
+            = 49
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Secret">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Secret._1">
+            <summary>
+            = 50
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Secret._2">
+            <summary>
+            = 243
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Glass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Red">
+            <summary>
+            = 51
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Violet">
+            <summary>
+            = 52
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Purple">
+            <summary>
+            = 53
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Blue">
+            <summary>
+            = 54
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Cyan">
+            <summary>
+            = 55
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Green">
+            <summary>
+            = 56
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Yellow">
+            <summary>
+            = 57
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Glass.Orange">
+            <summary>
+            = 58
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Spring2011">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.ShortGrassLeft">
+            <summary>
+            = 233
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.ShortGrassMiddle">
+            <summary>
+            = 234
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.ShortGrassRight">
+            <summary>
+            = 235
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.TallGrassLeft">
+            <summary>
+            = 236
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.TallGrassMiddle">
+            <summary>
+            = 237
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.TallGrassRight">
+            <summary>
+            = 238
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.Flower">
+            <summary>
+            = 239
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Spring2011.Bush">
+            <summary>
+            = 240
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Summer2011">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.Sand">
+            <summary>
+            = 59
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.Parasol">
+            <summary>
+            = 228
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.SandPileLeft">
+            <summary>
+            = 229
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.SandPileRight">
+            <summary>
+            = 230
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.Pebble">
+            <summary>
+            = 231
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2011.DriedBush">
+            <summary>
+            = 232
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Summer2012">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2012.Ball">
+            <summary>
+            = 307
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2012.Pail">
+            <summary>
+            = 308
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2012.Shovel">
+            <summary>
+            = 309
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Summer2012.Drink">
+            <summary>
+            = 310
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Candy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Candy.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.Bubblegum">
+            <summary>
+            = 60
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.MagentaBean">
+            <summary>
+            = 61
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.RedBean">
+            <summary>
+            = 62
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.CyanBean">
+            <summary>
+            = 63
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.GreenBean">
+            <summary>
+            = 64
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.Peppermint">
+            <summary>
+            = 65
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.Tricolor">
+            <summary>
+            = 66
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Block.Chocolate">
+            <summary>
+            = 67
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Candy.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.Decor.WhippedCream">
+            <summary>
+            = 227
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Candy.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.BG.Pink">
+            <summary>
+            = 539
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Candy.BG.Blue">
+            <summary>
+            = 540
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Halloween2011">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Halloween2011.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.Block.BloodyWall">
+            <summary>
+            = 68
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.Block.Wall">
+            <summary>
+            = 69
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Halloween2011.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.Decor.HeadStone">
+            <summary>
+            = 224
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.Decor.WebLeft">
+            <summary>
+            = 225
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.Decor.WebRight">
+            <summary>
+            = 226
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Halloween2011.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.BG.Fog">
+            <summary>
+            = 541
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.BG.Wall">
+            <summary>
+            = 542
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.BG.WallRight">
+            <summary>
+            = 543
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2011.BG.WallLeft">
+            <summary>
+            = 544
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Mineral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Red">
+            <summary>
+            = 70
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Magenta">
+            <summary>
+            = 71
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Blue">
+            <summary>
+            = 72
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Cyan">
+            <summary>
+            = 73
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Green">
+            <summary>
+            = 74
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Yellow">
+            <summary>
+            = 75
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mineral.Orange">
+            <summary>
+            = 76
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Music">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Music.Piano">
+            <summary>
+            = 77
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Music.Drum">
+            <summary>
+            = 83
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Christmas2010">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.SnowpileLeft">
+            <summary>
+            = 249
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.SnowpileRight">
+            <summary>
+            = 250
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.Tree">
+            <summary>
+            = 251
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.TreeFrost">
+            <summary>
+            = 252
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.FenceFrost">
+            <summary>
+            = 253
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2010.Fence">
+            <summary>
+            = 254
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Christmas2011">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Christmas2011.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Block.YellowGift">
+            <summary>
+            = 78
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Block.WhiteGift">
+            <summary>
+            = 79
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Block.RedGift">
+            <summary>
+            = 80
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Block.BlueGift">
+            <summary>
+            = 81
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Block.GreenGift">
+            <summary>
+            = 82
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Christmas2011.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Decor.RedOrnament">
+            <summary>
+            = 218
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Decor.GreenOrnament">
+            <summary>
+            = 219
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Decor.BlueOrnament">
+            <summary>
+            = 220
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Decor.Wreath">
+            <summary>
+            = 221
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Christmas2011.Decor.Star">
+            <summary>
+            = 222
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.NewYears2010">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.NewYears2010.Purple">
+            <summary>
+            = 244
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.NewYears2010.Yellow">
+            <summary>
+            = 245
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.NewYears2010.Blue">
+            <summary>
+            = 246
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.NewYears2010.Red">
+            <summary>
+            = 247
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.NewYears2010.Green">
+            <summary>
+            = 248
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Easter2012">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Easter2012.Blue">
+            <summary>
+            = 256
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Easter2012.Purple">
+            <summary>
+            = 257
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Easter2012.Yellow">
+            <summary>
+            = 258
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Easter2012.Red">
+            <summary>
+            = 259
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Easter2012.Green">
+            <summary>
+            = 260
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Scifi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.Red">
+            <summary>
+            = 84
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.Blue">
+            <summary>
+            = 85
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.Gray">
+            <summary>
+            = 86
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.White">
+            <summary>
+            = 87
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.Brown">
+            <summary>
+            = 88
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.RedPlatform">
+            <summary>
+            = 89
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.BluePlatform">
+            <summary>
+            = 90
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Scifi.GreenPlatform">
+            <summary>
+            = 91
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Prison">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Prison.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.Block.Wall">
+            <summary>
+            = 92
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Prison.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.Decor.Bars">
+            <summary>
+            = 261
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Prison.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.BG.Wall">
+            <summary>
+            = 550
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.BG.Painting">
+            <summary>
+            = 551
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.BG.BarsLight">
+            <summary>
+            = 552
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Prison.BG.BarsDark">
+            <summary>
+            = 553
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pirate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pirate.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.Block.Wood">
+            <summary>
+            = 93
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.Block.Chest">
+            <summary>
+            = 94
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pirate.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.Decor.Shelf">
+            <summary>
+            = 271
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.Decor.Skull">
+            <summary>
+            = 272
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pirate.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.PlanksDark">
+            <summary>
+            = 554
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.PlanksLight">
+            <summary>
+            = 555
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.PlanksNailed">
+            <summary>
+            = 556
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.LifeRing">
+            <summary>
+            = 557
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.Window">
+            <summary>
+            = 558
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.Cannon">
+            <summary>
+            = 559
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pirate.BG.JollyRoger">
+            <summary>
+            = 560
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Vikings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Vikings.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.Block.Wall">
+            <summary>
+            = 95
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Vikings.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.Decor.RedShield">
+            <summary>
+            = 273
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.Decor.BlueShield">
+            <summary>
+            = 274
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.Decor.Axe">
+            <summary>
+            = 275
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Vikings.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.BG.Wall">
+            <summary>
+            = 561
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.BG.WallShifted">
+            <summary>
+            = 562
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Vikings.BG.Flag">
+            <summary>
+            = 563
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ninja">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ninja.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Block.White">
+            <summary>
+            = 96
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Block.Black">
+            <summary>
+            = 97
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ninja.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Action.Ladder">
+            <summary>
+            = 120
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ninja.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.HornLightLeft">
+            <summary>
+            = 276
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.HornLightRight">
+            <summary>
+            = 277
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.WindowLight">
+            <summary>
+            = 278
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.HornDarkLeft">
+            <summary>
+            = 279
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.HornDarkRight">
+            <summary>
+            = 280
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.WindowDark">
+            <summary>
+            = 281
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.SymbolSun">
+            <summary>
+            = 282
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.SymbolOrigin">
+            <summary>
+            = 283
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.Decor.YinYang">
+            <summary>
+            = 284
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ninja.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.BG.White">
+            <summary>
+            = 564
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.BG.Gray">
+            <summary>
+            = 565
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.BG.RoofLight">
+            <summary>
+            = 566
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ninja.BG.RoofDark">
+            <summary>
+            = 567
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cowboy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cowboy.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.Brown">
+            <summary>
+            = 122
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.Red">
+            <summary>
+            = 123
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.Blue">
+            <summary>
+            = 124
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.DarkBrown">
+            <summary>
+            = 125
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.DarkRed">
+            <summary>
+            = 126
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Block.DarkBlue">
+            <summary>
+            = 127
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cowboy.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.Post">
+            <summary>
+            = 285
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.DarkPost">
+            <summary>
+            = 286
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BrownDoorLeft">
+            <summary>
+            = 287
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BrownDoorRight">
+            <summary>
+            = 288
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.RedDoorLeft">
+            <summary>
+            = 289
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.RedDoorRight">
+            <summary>
+            = 290
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BlueDoorLeft">
+            <summary>
+            = 291
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BlueDoorRight">
+            <summary>
+            = 292
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.CurtainWindow">
+            <summary>
+            = 293
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BrownRail">
+            <summary>
+            = 294
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.DarkBrownRail">
+            <summary>
+            = 295
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.RedRail">
+            <summary>
+            = 296
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.DarkRedRail">
+            <summary>
+            = 297
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.BlueRail">
+            <summary>
+            = 298
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.Decor.DarkBlueRail">
+            <summary>
+            = 299
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cowboy.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.Brown">
+            <summary>
+            = 568
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.DarkBrown">
+            <summary>
+            = 569
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.Red">
+            <summary>
+            = 570
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.DarkRed">
+            <summary>
+            = 571
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.Blue">
+            <summary>
+            = 572
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cowboy.BG.DarkBlue">
+            <summary>
+            = 573
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Water">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Water.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.Action.Water">
+            <summary>
+            = 119
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Water.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.Decor.Waves">
+            <summary>
+            = 300
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Water.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.BG.Water">
+            <summary>
+            = 574
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.BG.Octopus">
+            <summary>
+            = 575
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.BG.Fish">
+            <summary>
+            = =576
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.BG.SeaHorse">
+            <summary>
+            = 577
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Water.BG.Seaweed">
+            <summary>
+            = 578
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Plastic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.LightGreen">
+            <summary>
+            = 128
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Red">
+            <summary>
+            = 129
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Yellow">
+            <summary>
+            = 130
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Cyan">
+            <summary>
+            = 131
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Blue">
+            <summary>
+            = 132
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Magenta">
+            <summary>
+            = 133
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Green">
+            <summary>
+            = 134
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Plastic.Orange">
+            <summary>
+            = 135
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Sand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Sand.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.White">
+            <summary>
+            = 137
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.Gray">
+            <summary>
+            = 138
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.Yellow">
+            <summary>
+            = 139
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.Orange">
+            <summary>
+            = 140
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.Tan">
+            <summary>
+            = 141
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Block.Brown">
+            <summary>
+            = 142
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Sand.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.White">
+            <summary>
+            = 301
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.Gray">
+            <summary>
+            = 302
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.Yellow">
+            <summary>
+            = 303
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.Orange">
+            <summary>
+            = 304
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.Tan">
+            <summary>
+            = 305
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.Decor.Brown">
+            <summary>
+            = 306
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Sand.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.White">
+            <summary>
+            = 579
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.Gray">
+            <summary>
+            = 580
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.Yellow">
+            <summary>
+            = 581
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.Orange">
+            <summary>
+            = 582
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.Tan">
+            <summary>
+            = 583
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Sand.BG.Brown">
+            <summary>
+            = 584
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cloud">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cloud.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Block.White">
+            <summary>
+            = 143
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Cloud.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.Down">
+            <summary>
+            = 311
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.Up">
+            <summary>
+            = 312
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.Left">
+            <summary>
+            = 313
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.Right">
+            <summary>
+            = 314
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.UpLeft">
+            <summary>
+            = 315
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.UpRight">
+            <summary>
+            = 316
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.DownLeft">
+            <summary>
+            = 317
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Cloud.Decor.DownRight">
+            <summary>
+            = 318
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Signs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.Flammable">
+            <summary>
+            = 319
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.Toxic">
+            <summary>
+            = 320
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.HighVoltage">
+            <summary>
+            = 321
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.Warning">
+            <summary>
+            = 322
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.PoleHorizontal">
+            <summary>
+            = 323
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Signs.PoleVertical">
+            <summary>
+            = 324
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.PlateIron">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.PlateIron.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.Block.Wall">
+            <summary>
+            = 144
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.Block.Wires">
+            <summary>
+            = 145
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.PlateIron.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.BG.Plate">
+            <summary>
+            = 585
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.BG.Gray">
+            <summary>
+            = 586
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.BG.Blue">
+            <summary>
+            = 587
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.BG.Green">
+            <summary>
+            = 588
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.PlateIron.BG.Yellow">
+            <summary>
+            = 589
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Industrial">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.Platform">
+            <summary>
+            = 146
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.Brace">
+            <summary>
+            = 147
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.Piston">
+            <summary>
+            = 148
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.Cylinder">
+            <summary>
+            = 149
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.ConveyerLeftEnd">
+            <summary>
+            = 150
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.ConveyerBrace">
+            <summary>
+            = 151
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.ConveyerCenter">
+            <summary>
+            = 152
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Industrial.ConveyerRightEnd">
+            <summary>
+            = 153
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Timbered">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Timbered.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.Block.Platform">
+            <summary>
+            = 154
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Timbered.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.Straw">
+            <summary>
+            = 590
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.ShinglesRed">
+            <summary>
+            = 591
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.ShinglesGreen">
+            <summary>
+            = 592
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.WallV">
+            <summary>
+            = 593
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.WallWallBackSlash">
+            <summary>
+            = 594
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.WallForwardSlash">
+            <summary>
+            = 595
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.WallPlain">
+            <summary>
+            = 596
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.WallVertical">
+            <summary>
+            = 597
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Timbered.BG.Window">
+            <summary>
+            = 598
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Castle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Castle.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Block.Platform">
+            <summary>
+            = 158
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Block.Wall">
+            <summary>
+            = 159
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Block.Window">
+            <summary>
+            = 160
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Castle.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Action.Chain">
+            <summary>
+            = 118
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Castle.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Decor.Corbel">
+            <summary>
+            = 325
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.Decor.Battlement">
+            <summary>
+            = 326
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Castle.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Castle.BG.Wall">
+            <summary>
+            = 599
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Medieval">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Medieval.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Block.Anvil">
+            <summary>
+            = 162
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Block.Barrel">
+            <summary>
+            = 163
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Medieval.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Decor.BlueDrapes">
+            <summary>
+            = 327
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Decor.RedDrapes">
+            <summary>
+            = 328
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Decor.Sword">
+            <summary>
+            = 329
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Decor.Shield">
+            <summary>
+            = 330
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.Decor.Rock">
+            <summary>
+            = 331
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Medieval.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Medieval.BG.Wood">
+            <summary>
+            = 600
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pipes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.OpenLeft">
+            <summary>
+            = 166
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.Horizontal">
+            <summary>
+            = 167
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.OpenRight">
+            <summary>
+            = 168
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.OpenUp">
+            <summary>
+            = 169
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.Vertical">
+            <summary>
+            = 170
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pipes.OpenDown">
+            <summary>
+            = 171
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Rocket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Rocket.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Block.White">
+            <summary>
+            = 172
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Block.Blue">
+            <summary>
+            = 173
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Block.Green">
+            <summary>
+            = 174
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Block.Red">
+            <summary>
+            = 175
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Rocket.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Decor.GreenScreen">
+            <summary>
+            = 332
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Decor.RedButton">
+            <summary>
+            = 333
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Decor.BlueButton">
+            <summary>
+            = 334
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.Decor.Panel">
+            <summary>
+            = 335
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Rocket.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.BG.White">
+            <summary>
+            = 601
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.BG.Blue">
+            <summary>
+            = 602
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.BG.Green">
+            <summary>
+            = 603
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Rocket.BG.Red">
+            <summary>
+            = 604
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Mars">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Mars.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.Sand">
+            <summary>
+            = 176
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.Canal_1">
+            <summary>
+            = 177
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.Canal_2">
+            <summary>
+            = 178
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.Cracks">
+            <summary>
+            = 179
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.UnevenPillar">
+            <summary>
+            = 180
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Block.Pillar">
+            <summary>
+            = 181
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Mars.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.Decor.Rock">
+            <summary>
+            = 336
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Mars.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.BG.Sky">
+            <summary>
+            = 601
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.BG.SmallStar">
+            <summary>
+            = 602
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Mars.BG.LargeStar">
+            <summary>
+            = 603
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Boost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Boost.Left">
+            <summary>
+            = 114
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Boost.Right">
+            <summary>
+            = 115
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Boost.Up">
+            <summary>
+            = 116
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Boost.Down">
+            <summary>
+            = 117
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Coin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Coin.Gold">
+            <summary>
+            = 100
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Coin.Blue">
+            <summary>
+            = 101
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Coin.Door">
+            <summary>
+            = 43
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Coin.Gate">
+            <summary>
+            = 165
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Ladders">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ladders.Ninja">
+            <summary>
+            = 120
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ladders.Chain">
+            <summary>
+            = 118
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ladders.Ladder">
+            <summary>
+            = 120
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Ladders.Castle">
+            <summary>
+            = 118
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Windows">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Clear">
+            <summary>
+            = 262
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Green">
+            <summary>
+            = 263
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Cyan">
+            <summary>
+            = 264
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Blue">
+            <summary>
+            = 265
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Purple">
+            <summary>
+            = 266
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Magenta">
+            <summary>
+            = 267
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Red">
+            <summary>
+            = 268
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Orange">
+            <summary>
+            = 269
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Windows.Yellow">
+            <summary>
+            = 270
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Monster">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Monster.Decor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.Decor.Tooth">
+            <summary>
+            = 338
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.Decor.TeethBottom">
+            <summary>
+            = 339
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.Decor.TeethTop">
+            <summary>
+            = 340
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.Decor.EyeYellow">
+            <summary>
+            = 341
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.Decor.EyeBlue">
+            <summary>
+            = 342
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Monster.BG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.BG.LightGreen">
+            <summary>
+            = 608
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Monster.BG.DarkGreen">
+            <summary>
+            = 609
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Fog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.Center">
+            <summary>
+            = 343
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.Down">
+            <summary>
+            = 344
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.Up">
+            <summary>
+            = 345
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.Left">
+            <summary>
+            = 346
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.Right">
+            <summary>
+            = 347
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.UpLeft">
+            <summary>
+            = 348
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.UpRight">
+            <summary>
+            = 349
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.DownLeft">
+            <summary>
+            = 350
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Fog.DownRight">
+            <summary>
+            = 351
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Halloween2012">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2012.BrainDrainer">
+            <summary>
+            = 352
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2012.TeslaCoil">
+            <summary>
+            = 353
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2012.VerticalWire">
+            <summary>
+            = 354
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2012.HorizontalWire">
+            <summary>
+            = 355
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Halloween2012.Lightning">
+            <summary>
+            = 356
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Checker">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Gray">
+            <summary>
+            = 513
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Blue">
+            <summary>
+            = 514
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Magenta">
+            <summary>
+            = 515
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Red">
+            <summary>
+            = 516
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Yellow">
+            <summary>
+            = 517
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Green">
+            <summary>
+            = 518
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Checker.Cyan">
+            <summary>
+            = 519
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Dark">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Gray">
+            <summary>
+            = 520
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Blue">
+            <summary>
+            = 521
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Magenta">
+            <summary>
+            = 522
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Red">
+            <summary>
+            = 523
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Yellow">
+            <summary>
+            = 524
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Green">
+            <summary>
+            = 525
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Dark.Cyan">
+            <summary>
+            = 526
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Pastel">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.Yellow">
+            <summary>
+            = 527
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.Green">
+            <summary>
+            = 528
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.LightGreen">
+            <summary>
+            = 529
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.Cyan">
+            <summary>
+            = 530
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.Blue">
+            <summary>
+            = 531
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Pastel.Red">
+            <summary>
+            = 532
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Canvas">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Red">
+            <summary>
+            = 533
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Brown">
+            <summary>
+            = 534
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Yellow">
+            <summary>
+            = 535
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Green">
+            <summary>
+            = 536
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Blue">
+            <summary>
+            = 537
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Canvas.Gray">
+            <summary>
+            = 538
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Carnival">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Carnival.RedYellowStripes">
+            <summary>
+            = 545
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Carnival.PurpleBlueStripes">
+            <summary>
+            = 546
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Carnival.Pink">
+            <summary>
+            = 547
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Carnival.Checkered">
+            <summary>
+            = 548
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Carnival.Green">
+            <summary>
+            = 549
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Blocks.Normal">
+            <summary>
+            BG
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Gray">
+            <summary>
+            = 610
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Blue">
+            <summary>
+            = 611
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Magenta">
+            <summary>
+            = 612
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Red">
+            <summary>
+            = 613
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Yellow">
+            <summary>
+            = 614
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Green">
+            <summary>
+            = 615
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Blocks.Normal.Cyan">
+            <summary>
+            = 616
+            </summary>
+        </member>
+        <member name="T:EEBotZ.PortalRotation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PortalRotation.Left">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PortalRotation.Right">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PortalRotation.Up">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PortalRotation.Down">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="T:EEBotZ.PianoNotes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.C3">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Db3">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.D3">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Eb3">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.E3">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.F3">
+            <summary>
+            = 5
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Gb3">
+            <summary>
+            = 6
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.G3">
+            <summary>
+            = 7
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Ab3">
+            <summary>
+            = 8
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.A3">
+            <summary>
+            = 9
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Bb3">
+            <summary>
+            = 10
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.B3">
+            <summary>
+            = 11
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.C4">
+            <summary>
+            = 12
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Db4">
+            <summary>
+            = 13
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.D4">
+            <summary>
+            = 14
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Eb4">
+            <summary>
+            = 15
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.E4">
+            <summary>
+            = 16
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.F4">
+            <summary>
+            = 17
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Gb4">
+            <summary>
+            = 18
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.G4">
+            <summary>
+            = 19
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Ab4">
+            <summary>
+            = 20
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.A4">
+            <summary>
+            = 21
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.Bb4">
+            <summary>
+            = 22
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.B4">
+            <summary>
+            = 23
+            </summary>
+        </member>
+        <member name="F:EEBotZ.PianoNotes.C5">
+            <summary>
+            = 24
+            </summary>
+        </member>
+        <member name="T:EEBotZ.DrumHits">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.BassHit">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.BassHitCymbalSoft">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.SnareHitHard">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.SnareHitSoft">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.HiHatCymbalSoft">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.HiHatCymbalHard">
+            <summary>
+            = 5
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.HiHatCymbalRing">
+            <summary>
+            = 6
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.Clap">
+            <summary>
+            = 7
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.CrashCymbal">
+            <summary>
+            = 8
+            </summary>
+        </member>
+        <member name="F:EEBotZ.DrumHits.Maraca">
+            <summary>
+            = 9
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Smileys">
+            <summary>
+            A class containing the ID numbers for all smilies.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Smiley">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Grin">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Tongue">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Happy">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Annoyed">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Sad">
+            <summary>
+            = 5
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Crying">
+            <summary>
+            = 6
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Wink">
+            <summary>
+            = 7
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Frustrated">
+            <summary>
+            = 8
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Shades">
+            <summary>
+            = 9
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Devil">
+            <summary>
+            = 10
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Inquisitive">
+            <summary>
+            = 11
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Ninja">
+            <summary>
+            = 12
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Santa">
+            <summary>
+            = 13
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Worker">
+            <summary>
+            = 14
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.BigSpender">
+            <summary>
+            = 15
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Superman">
+            <summary>
+            = 16
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Surprise">
+            <summary>
+            = 17
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Indifferent">
+            <summary>
+            = 18
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Girl">
+            <summary>
+            = 19
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.NewYear2010">
+            <summary>
+            = 20
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Coy">
+            <summary>
+            = 21
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Wizard">
+            <summary>
+            = 22
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.FanBoy">
+            <summary>
+            = 23
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Terminator">
+            <summary>
+            = 24
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.ExtraGrin">
+            <summary>
+            = 25
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Bully">
+            <summary>
+            = 26
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Commando">
+            <summary>
+            = 27
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Kissing">
+            <summary>
+            = 28
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Bird">
+            <summary>
+            = 29
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Bunny">
+            <summary>
+            = 30
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Diamond">
+            <summary>
+            = 31
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.FireWizard">
+            <summary>
+            = 32
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.ExtraTongue">
+            <summary>
+            = 33
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Postman">
+            <summary>
+            = 34
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Templar">
+            <summary>
+            = 35
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Angel">
+            <summary>
+            = 36
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Nurse">
+            <summary>
+            = 36
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Vampire">
+            <summary>
+            = 37
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Ghost">
+            <summary>
+            = 38
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Frankenstein">
+            <summary>
+            = 39
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Witch">
+            <summary>
+            = 41
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Indian">
+            <summary>
+            = 42
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Pilgrim">
+            <summary>
+            = 43
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Pumpkin">
+            <summary>
+            = 44
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.LitPumpkin">
+            <summary>
+            = 45
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Snowman">
+            <summary>
+            = 46
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Reindeer">
+            <summary>
+            = 47
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Grinch">
+            <summary>
+            = 48
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Maestro">
+            <summary>
+            = 49
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.DJ">
+            <summary>
+            = 50
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Sigh">
+            <summary>
+            = 51
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Robber">
+            <summary>
+            = 52
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Police">
+            <summary>
+            = 53
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.UpsideDown">
+            <summary>
+            = 54
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.RedNinja">
+            <summary>
+            = 54
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.PacManGhost">
+            <summary>
+            = 54
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Pirate">
+            <summary>
+            = 55
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Viking">
+            <summary>
+            = 56
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Karate">
+            <summary>
+            = 57
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Cowboy">
+            <summary>
+            = 58
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Diver">
+            <summary>
+            = 59
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Tanned">
+            <summary>
+            = 60
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Propleller">
+            <summary>
+            = 61
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.HardHat">
+            <summary>
+            = 62
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Gasmask">
+            <summary>
+            = 63
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Robot">
+            <summary>
+            = 64
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Peasant">
+            <summary>
+            = 65
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Soldier">
+            <summary>
+            = 66
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Blacksmith">
+            <summary>
+            = 67
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Lol">
+            <summary>
+            = 68
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Laika">
+            <summary>
+            = 69
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Alien">
+            <summary>
+            = 70
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Astronaut">
+            <summary>
+            = 71
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.PartyHappy">
+            <summary>
+            = 72
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.PartySmiley">
+            <summary>
+            = 73
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.PartyGrin">
+            <summary>
+            = 74
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.PartyTongue">
+            <summary>
+            = 75
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Cannonball">
+            <summary>
+            = 76
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Monster">
+            <summary>
+            = 77
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.Skeleton">
+            <summary>
+            = 78
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Smileys.MadScientist">
+            <summary>
+            = 79
+            </summary>
+        </member>
+        <member name="T:EEBotZ.QuickChats">
+            <summary>
+            A class containing the ID numbers for quick-chat.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Hi">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Bye">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Help">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Thanks">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Come">
+            <summary>
+            = 5
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Stop">
+            <summary>
+            = 6
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Yes">
+            <summary>
+            = 7
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.No">
+            <summary>
+            = 8
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Right">
+            <summary>
+            = 9
+            </summary>
+        </member>
+        <member name="F:EEBotZ.QuickChats.Left">
+            <summary>
+            = 0
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Potions">
+            <summary>
+            A class containing the ID numbers for potions.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Potions.Blue">
+            <summary>
+            = 1
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Potions.Yellow">
+            <summary>
+            = 2
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Potions.Red">
+            <summary>
+            = 3
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Potions.Jump">
+            <summary>
+            = 4
+            </summary>
+        </member>
+        <member name="T:EEBotZ.Packet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.Packet.#ctor(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:EEBotZ.Packet.Add(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:EEBotZ.Packet.GetInt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.Packet.GetUint(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.Packet.GetDouble(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.Packet.GetString(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.Packet.GetBool(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.Packet.GetByteArray(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:EEBotZ.Packet.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.Packet.Parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.Packet.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.Packet.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EEBotZ.User">
+            <summary>
+            User contains all info relevant to a particular player in the world.
+            </summary>
+        </member>
+        <member name="M:EEBotZ.User.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructs a new instance of User.
+            </summary>
+            <param name="Name">The user's name.</param>
+            <param name="ID">The user's ID number.</param>
+        </member>
+        <member name="M:EEBotZ.User.#ctor">
+            <summary>
+            Constructs a new instance of User. With Name = "" and ID = -1.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Name">
+            <summary>
+            The username of the user.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.ID">
+            <summary>
+            The ID number of the user.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Move">
+            <summary>
+            The movement of the user.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.SmileyID">
+            <summary>
+            The ID of the user's smiley.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isGod">
+            <summary>
+            Is the user in god mode?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isMod">
+            <summary>
+            Is the user in mod mode?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isOwner">
+            <summary>
+            Is the user the owner of the level?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isChat">
+            <summary>
+            Does this user have chat?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isFriend">
+            <summary>
+            Is this user the bot's friend?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isPurple">
+            <summary>
+            Is this user purple?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.isClubMember">
+            <summary>
+            Is the user a club member?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Level">
+            <summary>
+            The user's level.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Coins">
+            <summary>
+            The number of coins this user has.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.hasCrown">
+            <summary>
+            Does this user have the crown?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Won">
+            <summary>
+            Did this user win the level?
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Points">
+            <summary>
+            The number of points this user has.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Wins">
+            <summary>
+            The number of times this user has won.
+            </summary>
+        </member>
+        <member name="T:EEBotZ.User.Motion">
+            <summary>
+            The movement of the user.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.Velocity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.Acceleration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.KeyDown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.GravityMultiplier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.KeyDown_Space">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.User.Motion.Vector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.User.Motion.Vector.#ctor(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="F:EEBotZ.User.Motion.Vector.X">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EEBotZ.User.Motion.Vector.Y">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.User.Motion.Vector.Zero">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EEBotZ.UserManager">
+            <summary>
+            Manages admin list and ban list.
+            </summary>
+        </member>
+        <member name="M:EEBotZ.UserManager.#ctor">
+            <summary>
+            Constructs a new instance of UserManager
+            </summary>
+        </member>
+        <member name="F:EEBotZ.UserManager.Users">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.UserManager.AddAdmin(System.String)">
+            <summary>
+            Add a user to the admin list.
+            It will not add if the name is already on the list.
+            </summary>
+            <param name="user">The user's username.</param>
+        </member>
+        <member name="M:EEBotZ.UserManager.AddBan(System.String)">
+            <summary>
+            Add a user to the admin list.
+            It will not add if the name is already on the list.
+            </summary>
+            <param name="user">The users username.</param>
+        </member>
+        <member name="M:EEBotZ.UserManager.RemoveAdmin(System.String)">
+            <summary>
+            Remove a user from the admin list.
+            </summary>
+            <param name="user">The user's username.</param>
+        </member>
+        <member name="M:EEBotZ.UserManager.RemoveBan(System.String)">
+            <summary>
+            Remove a user from the ban list.
+            </summary>
+            <param name="user">The user's username.</param>
+        </member>
+        <member name="M:EEBotZ.UserManager.isAdmin(System.String)">
+            <summary>
+            Is the user on the admin list?
+            </summary>
+            <param name="user">The user's username.</param>
+            <returns>True if the user is on the admin list.</returns>
+        </member>
+        <member name="M:EEBotZ.UserManager.isBan(System.String)">
+            <summary>
+            Is the user on the ban list?
+            </summary>
+            <param name="user">The user's username.</param>
+            <returns>True if the user is on the ban list.</returns>
+        </member>
+        <member name="M:EEBotZ.UserManager.ID_of(System.String)">
+            <summary>
+            Finds the ID a user among an array of users.
+            </summary>
+            <param name="Name">The name of the user to find.</param>
+            <returns>Returns the ID found in the array. Returns null if not found.</returns>
+        </member>
+        <member name="M:EEBotZ.UserManager.UserJoined(EEBotZ.User)">
+            <summary>
+            Adds the new user to the array of users.
+            </summary>
+            <param name="NewUser">The new user to add.</param>
+        </member>
+        <member name="M:EEBotZ.UserManager.UserLeft(System.Int32)">
+            <summary>
+            Removes the user from the array of users.
+            </summary>
+            <param name="ID">The ID of the user to remove.</param>
+        </member>
+        <member name="P:EEBotZ.UserManager.AdminList">
+            <summary>
+            The admin list.
+            </summary>
+        </member>
+        <member name="P:EEBotZ.UserManager.BanList">
+            <summary>
+            The ban list.
+            </summary>
+        </member>
+        <member name="T:EEBotZ.WorldInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EEBotZ.WorldInfo.#ctor(System.String,System.Int32,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="onlineUsers"></param>
+            <param name="type"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:EEBotZ.WorldInfo.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="onlineUsers"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:EEBotZ.WorldInfo.CreateWorldData(System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="plays"></param>
+            <param name="locked"></param>
+            <param name="saved"></param>
+            <param name="beta"></param>
+            <param name="rating"></param>
+            <returns></returns>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.ID">
+            <summary>
+            The world ID.
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.OnlineUsers">
+            <summary>
+            The number of online users in the world.
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Type">
+            <summary>
+            The type of world.
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Plays">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Locked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Saved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Beta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:EEBotZ.WorldInfo.Rating">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:EEBotZ.OnConnectEventHandler">
+            <summary>
+            A handler for the OnConnect event.
+            </summary>
+            <param name="sender">The object that fired this event.</param>
+        </member>
+        <member name="T:EEBotZ.OnFailConnectEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnJoinWorldEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.OnFailJoinWorldEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnCreateWorldEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="s"></param>
+        </member>
+        <member name="T:EEBotZ.OnFailCreateWorldEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.GotWorldKeyEventHandler">
+            <summary>
+            A handler for the GotWorldKey event.
+            </summary>
+            <param name="sender">The object that fired this event.</param>
+            <param name="worldKey">The value of WorldKey.</param>
+        </member>
+        <member name="T:EEBotZ.OnPacketEventHandler">
+            <summary>
+            A handler for the OnPacket event.
+            Also for the OnOther event.
+            </summary>
+            <param name="sender">The object that fired this event.</param>
+            <param name="p">The packet received.</param>
+        </member>
+        <member name="T:EEBotZ.OnDisconnectEventHandler">
+            <summary>
+            A handler for the OnDisconnect event.
+            </summary>
+            <param name="sender">The object that fired this event.</param>
+            <param name="message">The reason for disconnecting.</param>
+        </member>
+        <member name="T:EEBotZ.OnInitEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="owner"></param>
+            <param name="worldName"></param>
+            <param name="numberOfPlays"></param>
+            <param name="woots"></param>
+            <param name="totalWoots"></param>
+            <param name="worldKey"></param>
+            <param name="botUser"></param>
+            <param name="access"></param>
+            <param name="isOwner"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="tutorial"></param>
+            <param name="gravity"></param>
+            <param name="potions"></param>
+            <param name="mapData"></param>
+            <param name="potionData"></param>
+        </member>
+        <member name="T:EEBotZ.OnInfoEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnPotionEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="potionID"></param>
+            <param name="active"></param>
+        </member>
+        <member name="T:EEBotZ.OnWriteEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnUpgradeEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.OnMoveEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="motion"></param>
+            <param name="coins"></param>
+            <param name="purple"></param>
+            <param name="hasLevitation"></param>
+        </member>
+        <member name="T:EEBotZ.OnAddEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="user"></param>
+        </member>
+        <member name="T:EEBotZ.OnCoinEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="coins"></param>
+        </member>
+        <member name="T:EEBotZ.OnCrownEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnWinEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnBlockEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="layer"></param>
+            <param name="posX"></param>
+            <param name="posY"></param>
+            <param name="blockID"></param>
+            <param name="userID"></param>
+            <param name="coins"></param>
+            <param name="sound"></param>
+            <param name="rotation"></param>
+            <param name="thisID"></param>
+            <param name="targetID"></param>
+            <param name="text"></param>
+        </member>
+        <member name="T:EEBotZ.OnTextEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="posX"></param>
+            <param name="posY"></param>
+            <param name="text"></param>
+        </member>
+        <member name="T:EEBotZ.OnShowEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="doorType"></param>
+        </member>
+        <member name="T:EEBotZ.OnHideEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="doorType"></param>
+        </member>
+        <member name="T:EEBotZ.OnSmileyEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="smileyID"></param>
+        </member>
+        <member name="T:EEBotZ.OnGodEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="god"></param>
+        </member>
+        <member name="T:EEBotZ.OnModEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnLostAccessEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.OnAccessEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.OnSayEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnSayOldEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnChangeNameEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="owner"></param>
+            <param name="worldName"></param>
+            <param name="numberOfPlays"></param>
+        </member>
+        <member name="T:EEBotZ.OnQuickChatEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:EEBotZ.OnLeftEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnClearEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="T:EEBotZ.OnResetEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="idk"></param>
+            <param name="spawnInfo"></param>
+        </member>
+        <member name="T:EEBotZ.OnLoadLevelEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="mapData"></param>
+        </member>
+        <member name="T:EEBotZ.OnSaveEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.OnGroupDisallowedJoinEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:EEBotZ.Pixel">
+            <summary>
+            Contains info for what blocks are contained at a particular location in the world.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.Foreground">
+            <summary>
+            The ID of the block in the foreground.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.Background">
+            <summary>
+            The ID of the block in the background.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.Coins">
+            <summary>
+            The number of coins for coin door or coin gate.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.Sound">
+            <summary>
+            The sound ID used for piano or drum blocks.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.Rotation">
+            <summary>
+            The direction in which a portal faces.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.ThisID">
+            <summary>
+            The ID of this portal.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.Pixel.TargetID">
+            <summary>
+            The ID of the target portal.
+            </summary>
+        </member>
+        <member name="T:EEBotZ.SpawnInfo">
+            <summary>
+            Contains info for where a player spawns at upon reset.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.SpawnInfo.UserID">
+            <summary>
+            The ID of the user.
+            </summary>
+        </member>
+        <member name="F:EEBotZ.SpawnInfo.Position">
+            <summary>
+            The position of the user.
+            </summary>
+        </member>
+    </members>
+</doc>
