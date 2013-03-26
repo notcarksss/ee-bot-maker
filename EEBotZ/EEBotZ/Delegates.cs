@@ -50,7 +50,7 @@ namespace EEBotZ
     /// </summary>
     /// <param name="sender">The object that fired this event.</param>
     /// <param name="worldKey">The value of WorldKey.</param>
-    public delegate void GotWorldKeyEventHandler(object sender, string worldKey);
+    public delegate void OnWorldKeyEventHandler(object sender, string worldKey);
 
     /// <summary>
     /// A handler for the OnPacket event.
@@ -181,15 +181,6 @@ namespace EEBotZ
     /// 
     /// </summary>
     /// <param name="sender"></param>
-    /// <param name="posX"></param>
-    /// <param name="posY"></param>
-    /// <param name="text"></param>
-    public delegate void OnTextEventHandler(object sender, int posX, int posY, string text);
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sender"></param>
     /// <param name="doorType"></param>
     public delegate void OnShowEventHandler(object sender, string doorType);
 
@@ -206,7 +197,7 @@ namespace EEBotZ
     /// <param name="sender"></param>
     /// <param name="userID"></param>
     /// <param name="smileyID"></param>
-    public delegate void OnSmileyEventHandler(object sender, int userID, int smileyID);
+    public delegate void OnFaceEventHandler(object sender, int userID, int smileyID);
 
     /// <summary>
     /// 
@@ -239,6 +230,36 @@ namespace EEBotZ
     /// 
     /// </summary>
     /// <param name="sender"></param>
+    /// <param name="b"></param>
+    /// <param name="potions"></param>
+    public delegate void OnAllowPotionsEventHandler(object sender, bool b, int[] potions);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="userID"></param>
+    public delegate void OnWootUpEventHandler(object sender, int userID);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="userID"></param>
+    public delegate void OnWootEventHandler(object sender, int userID);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="userID"></param>
+    /// <param name="level"></param>
+    public delegate void OnLevelUpEventHandler(object sender, int userID, int level);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
     /// <param name="userID"></param>
     /// <param name="message"></param>
     public delegate void OnSayEventHandler(object sender, int userID, string message);
@@ -258,7 +279,7 @@ namespace EEBotZ
     /// <param name="owner"></param>
     /// <param name="worldName"></param>
     /// <param name="numberOfPlays"></param>
-    public delegate void OnChangeNameEventHandler(object sender, string owner, string worldName, int numberOfPlays);
+    public delegate void OnUpdateMetaEventHandler(object sender, string owner, string worldName, int numberOfPlays, int woots, int totalWoots);
 
     /// <summary>
     /// 

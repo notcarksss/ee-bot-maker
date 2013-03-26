@@ -49,6 +49,11 @@
             
             </summary>
         </member>
+        <member name="F:EEBotZ.EEConn.ListUsers">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:EEBotZ.EEConn.Connect(System.String,System.String)">
             <summary>
             Sign in as a registered user.
@@ -204,31 +209,26 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:EEBotZ.EEConn.AddWorldKeyListener">
-            <summary>
-            Adds the WorldKeyListener.
-            If the connection receives the "init" packet, it will be able to send packets that require the worldKey.
-            </summary>
-        </member>
-        <member name="M:EEBotZ.EEConn.WorldKeyListener(System.Object,PlayerIOClient.Message)">
+        <member name="M:EEBotZ.EEConn.Init2Array(PlayerIOClient.Message)">
             <summary>
             
             </summary>
-            <param name="sender"></param>
             <param name="e"></param>
+            <returns></returns>
         </member>
-        <member name="M:EEBotZ.EEConn.AddListUsers">
-            <summary>
-            Adds the ListUsers feature.
-            The bot will keep a list of users currently in the world via User[] users.
-            </summary>
-        </member>
-        <member name="M:EEBotZ.EEConn.listUsers(System.Object,PlayerIOClient.Message)">
+        <member name="M:EEBotZ.EEConn.Load2Array(PlayerIOClient.Message)">
             <summary>
             
             </summary>
-            <param name="sender"></param>
             <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EEBotZ.EEConn.Init2Pot(PlayerIOClient.Message)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
         </member>
         <member name="M:EEBotZ.EEConn.ListAllRooms(System.Int32,System.Int32)">
             <summary>
@@ -299,7 +299,7 @@
             
             </summary>
         </member>
-        <member name="E:EEBotZ.EEConn.GotWorldKey">
+        <member name="E:EEBotZ.EEConn.OnWorldKey">
             <summary>
             Triggered when bot retrieves the WorldKey.
             </summary>
@@ -487,6 +487,26 @@
             Triggered when the world code changes. Bot can no longer edit.
             </summary>
         </member>
+        <member name="E:EEBotZ.EEConn.OnAllowPotions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnWootUp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnWoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:EEBotZ.EEConn.OnLevelUp">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="E:EEBotZ.EEConn.OnSave">
             <summary>
             Triggered when the world is saved.
@@ -519,7 +539,7 @@
             ... The pattern of [1],[2],[3] continues for all users in the world.
             </summary>
         </member>
-        <member name="E:EEBotZ.EEConn.OnChangeName">
+        <member name="E:EEBotZ.EEConn.OnUpdateMeta">
             <summary>
             Triggered when name of world is changed.
             [0] owner of world (string)
@@ -545,14 +565,6 @@
             [0] user ID (int)
             [1] potion ID (int)
             [2] active (bool)
-            </summary>
-        </member>
-        <member name="E:EEBotZ.EEConn.OnText">
-            <summary>
-            Triggered when a mod writes text in the world.
-            [0] X position (int)
-            [1] Y position (int)
-            [2] text (string)
             </summary>
         </member>
         <member name="E:EEBotZ.EEConn.OnUpgrade">
@@ -4485,7 +4497,7 @@
             <param name="sender"></param>
             <param name="message"></param>
         </member>
-        <member name="T:EEBotZ.GotWorldKeyEventHandler">
+        <member name="T:EEBotZ.OnWorldKeyEventHandler">
             <summary>
             A handler for the GotWorldKey event.
             </summary>
@@ -4617,15 +4629,6 @@
             <param name="targetID"></param>
             <param name="text"></param>
         </member>
-        <member name="T:EEBotZ.OnTextEventHandler">
-            <summary>
-            
-            </summary>
-            <param name="sender"></param>
-            <param name="posX"></param>
-            <param name="posY"></param>
-            <param name="text"></param>
-        </member>
         <member name="T:EEBotZ.OnShowEventHandler">
             <summary>
             
@@ -4640,7 +4643,7 @@
             <param name="sender"></param>
             <param name="doorType"></param>
         </member>
-        <member name="T:EEBotZ.OnSmileyEventHandler">
+        <member name="T:EEBotZ.OnFaceEventHandler">
             <summary>
             
             </summary>
@@ -4675,6 +4678,36 @@
             </summary>
             <param name="sender"></param>
         </member>
+        <member name="T:EEBotZ.OnAllowPotionsEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="b"></param>
+            <param name="potions"></param>
+        </member>
+        <member name="T:EEBotZ.OnWootUpEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnWootEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+        </member>
+        <member name="T:EEBotZ.OnLevelUpEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="userID"></param>
+            <param name="level"></param>
+        </member>
         <member name="T:EEBotZ.OnSayEventHandler">
             <summary>
             
@@ -4691,7 +4724,7 @@
             <param name="userName"></param>
             <param name="message"></param>
         </member>
-        <member name="T:EEBotZ.OnChangeNameEventHandler">
+        <member name="T:EEBotZ.OnUpdateMetaEventHandler">
             <summary>
             
             </summary>
@@ -4790,10 +4823,30 @@
             The ID of the target portal.
             </summary>
         </member>
+        <member name="F:EEBotZ.Pixel.Text">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:EEBotZ.SpawnInfo">
             <summary>
             Contains info for where a player spawns at upon reset.
             </summary>
+        </member>
+        <member name="M:EEBotZ.SpawnInfo.#ctor(System.Int32,System.Drawing.Point)">
+            <summary>
+            
+            </summary>
+            <param name="userID"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:EEBotZ.SpawnInfo.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="userID"></param>
+            <param name="posX"></param>
+            <param name="posY"></param>
         </member>
         <member name="F:EEBotZ.SpawnInfo.UserID">
             <summary>

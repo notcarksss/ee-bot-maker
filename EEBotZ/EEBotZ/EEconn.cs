@@ -70,6 +70,11 @@ namespace EEBotZ
         /// </summary>
         public bool ListenForPackets = false;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool ListUsers = false;
+
         #endregion
 
         #region Events
@@ -107,7 +112,7 @@ namespace EEBotZ
         /// <summary>
         /// Triggered when bot retrieves the WorldKey.
         /// </summary>
-        public event GotWorldKeyEventHandler GotWorldKey;
+        public event OnWorldKeyEventHandler OnWorldKey;
 
         /// <summary>
         /// Triggered when any packet is received.
@@ -249,7 +254,7 @@ namespace EEBotZ
         /// [0] user ID (int)
         /// [1] smiley ID (int)
         /// </summary>
-        public event OnSmileyEventHandler OnFace;
+        public event OnFaceEventHandler OnFace;
 
         /// <summary>
         /// Triggered when a user gets the crown.
@@ -293,6 +298,26 @@ namespace EEBotZ
         public event OnLostAccessEventHandler OnLostAccess;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public event OnAllowPotionsEventHandler OnAllowPotions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public event OnWootUpEventHandler OnWootUp;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public event OnWootEventHandler OnWoot;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public event OnLevelUpEventHandler OnLevelUp;
+
+        /// <summary>
         /// Triggered when the world is saved.
         /// </summary>
         public event OnSaveEventHandler OnSave;
@@ -330,7 +355,7 @@ namespace EEBotZ
         /// [1] name of world (string)
         /// [2] number of plays (int)
         /// </summary>
-        public event OnChangeNameEventHandler OnChangeName;
+        public event OnUpdateMetaEventHandler OnUpdateMeta;
 
         /// <summary>
         /// Triggered when server sends an info box.
@@ -351,14 +376,6 @@ namespace EEBotZ
         /// [2] active (bool)
         /// </summary>
         public event OnPotionEventHandler OnPotion;
-
-        /// <summary>
-        /// Triggered when a mod writes text in the world.
-        /// [0] X position (int)
-        /// [1] Y position (int)
-        /// [2] text (string)
-        /// </summary>
-        public event OnTextEventHandler OnText;
 
         /// <summary>
         /// Triggered when game gets upgraded.
@@ -619,18 +636,22 @@ namespace EEBotZ
             switch (e.Type)
             {
                 case "init":
+                    WorldKey = Rot13(e.GetString(5));
+                    if (OnWorldKey != null) OnWorldKey(this, WorldKey);
+                    MapData = Init2Array(e);
                     if (OnInit != null)
                     {
                         User bot = new User(e.GetString(9), e.GetInt(6));
                         bot.Move.Position.X = (double)e.GetInt(7);
                         bot.Move.Position.Y = (double)e.GetInt(8);
+                        Dictionary<int, int> potData = Init2Pot(e);
                         OnInit(this,
                             e.GetString(0),
                             e.GetString(1),
                             e.GetString(2),
                             e.GetInt(3),
                             e.GetInt(4),
-                            Rot13(e.GetString(5)),
+                            WorldKey,
                             bot,
                             e.GetBoolean(10),
                             e.GetBoolean(11),
@@ -639,8 +660,8 @@ namespace EEBotZ
                             e.GetBoolean(14),
                             e.GetDouble(15),
                             e.GetBoolean(16),
-                            null,
-                            null);
+                            MapData,
+                            potData);
                     }
                     break;
                 case "info":
@@ -671,7 +692,7 @@ namespace EEBotZ
                     }
                     break;
                 case "add":
-                    if (OnAdd != null)
+                    if (OnAdd != null || ListUsers)
                     {
                         User u = new User(e.GetString(1), e.GetInt(0));
                         u.SmileyID = e.GetInt(2);
@@ -685,7 +706,8 @@ namespace EEBotZ
                         u.isPurple = e.GetBoolean(10);
                         u.Level = e.GetInt(11);
                         u.isClubMember = e.GetBoolean(12);
-                        OnAdd(this, u);
+                        if (OnAdd != null) OnAdd(this, u);
+                        if (ListUsers) Manager.UserJoined(u);
                     }
                     break;
                 case "c":
@@ -736,81 +758,82 @@ namespace EEBotZ
                 case "access":
                     if (OnAccess != null) OnAccess(this);
                     break;
-                    //allowpotions
-                    //wu
-                    //w
-                    //levelup
-                    //say
-                    //updatemeta
-                    //autotext
-                    //left
-                    //clear
-                    //tele
-                    //reset
-                    //saved
+                case "allowpotions":
+                    if (OnAllowPotions != null)
+                    {
+                        List<int> potions = new List<int>();
+                        for (uint n = 1; n < e.Count; n++)
+                        {
+                            potions.Add(e.GetInt(n));
+                        }
+                        OnAllowPotions(this, e.GetBoolean(0), potions.ToArray());
+                    }
+                    break;
+                case "wu":
+                    if (OnWootUp != null) OnWootUp(this, e.GetInt(0));
+                    break;
+                case "w":
+                    if (OnWoot != null) OnWoot(this, e.GetInt(0));
+                    break;
+                case "levelup":
+                    if (OnLevelUp != null) OnLevelUp(this, e.GetInt(0), e.GetInt(1));
+                    break;
+                case "say":
+                    if (OnSay != null) OnSay(this, e.GetInt(0), e.GetString(1));
+                    break;
+                case "say_old":
+                    if (OnSayOld != null) OnSayOld(this, e.GetString(0), e.GetString(1));
+                    break;
+                case "updatemeta":
+                    if (OnUpdateMeta != null) OnUpdateMeta(this, e.GetString(0), e.GetString(1), e.GetInt(2), e.GetInt(3), e.GetInt(4));
+                    break;
+                case "autotext":
+                    if (OnQuickChat != null) OnQuickChat(this, e.GetInt(0), e.GetString(1));
+                    break;
+                case "left":
+                    if (OnLeft != null) OnLeft(this, e.GetInt(0));
+                    if (ListUsers) Manager.UserLeft(e.GetInt(0));
+                    break;
+                case "clear":
+                    if (OnClear != null) OnClear(this, e.GetInt(0), e.GetInt(1));
+                    break;
+                case "tele":    //owner reset level OR a user got killed
+                    if (OnReset != null)
+                    {
+                        List<SpawnInfo> si = new List<SpawnInfo>();
+                        for (uint n = 1; n < e.Count; n += 3)
+                        {
+                            si.Add(new SpawnInfo(e.GetInt(n), e.GetInt(n + 1), e.GetInt(n + 2)));
+                        }
+                        OnReset(this, e.GetBoolean(0), si.ToArray());
+                    }
+                    break;
+                case "reset":   // owner loded level
+                    MapData = Load2Array(e);
+                    if (OnLoadLevel != null) OnLoadLevel(this, MapData);
+                    break;
+                case "saved":
+                    if (OnSave != null) OnSave(this);
+                    break;
+                default:
+                    if (OnOther != null)
+                    {
+                        Packet packet = new Packet(e.Type);
+                        for (uint n = 0; n < e.Count; n++)
+                        {
+                            packet.Add(e[n]);
+                        }
+                        OnOther(this, packet);
+                    }
+                    break;
             }
-        }
-
-        /// <summary>
-        /// Adds the WorldKeyListener.
-        /// If the connection receives the "init" packet, it will be able to send packets that require the worldKey.
-        /// </summary>
-        public void AddWorldKeyListener()
-        {
-            conn.OnMessage += new MessageReceivedEventHandler(WorldKeyListener);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void WorldKeyListener(object sender, Message e)
-        {
-            if (e.Type == "init")
-            {
-                WorldKey = Rot13((string)e[3]);
-            }
-        }
-
-        /// <summary>
-        /// Adds the ListUsers feature.
-        /// The bot will keep a list of users currently in the world via User[] users.
-        /// </summary>
-        public void AddListUsers()
-        {
-            conn.OnMessage += new MessageReceivedEventHandler(listUsers);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void listUsers(object sender, Message e)
-        {
-            if (e.Type == "add")
-            {
-                User newUser = new User(e.GetString(1), e.GetInt(0));
-                newUser.SmileyID = e.GetInt(2);
-                newUser.Move.Position.X = e.GetDouble(3);
-                newUser.Move.Position.Y = e.GetDouble(4);
-                newUser.isGod = e.GetBoolean(5);
-                newUser.isMod = e.GetBoolean(6);
-                newUser.isChat = e.GetBoolean(7);
-                newUser.Coins = e.GetInt(8);
-                newUser.isFriend = e.GetBoolean(9);
-                newUser.isPurple = e.GetBoolean(10);
-                newUser.Level = e.GetInt(11);
-                newUser.isClubMember = e.GetBoolean(12);
-                Manager.UserJoined(newUser);
-            }
-            if (e.Type == "left")
-            {
-                Manager.UserLeft(e.GetInt(0));
-            }
-        }
-
+        /// <returns></returns>
         private Pixel[,] Init2Array(Message e)
         {
             int w = e.GetInt(12);
@@ -874,51 +897,98 @@ namespace EEBotZ
             return array;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private Pixel[,] Load2Array(Message e)
         {
             Pixel[,] array = MapData;
+            int w = array.GetLength(0);
+            int h = array.GetLength(1);
+            for (int yn = 0; yn < h; yn++)
+            {
+                for (int xn = 0; xn < w; xn++)
+                {
+                    array[xn, yn] = new Pixel();
+                }
+            }
             byte[] xarray, yarray;
             int x, y;
             int id;
             uint n = 0;
-            while (true)
+            while (n < e.Count)
             {
-                if (e[n].ToString() == "ws")
+                if (e.GetString(n) == "ws")
                     break;
                 n++;
             }
             n++;
-            while (true)
+            while (n < e.Count)
             {
-                if (e[n].ToString() == "we")
+                if (e.GetString(n) == "we")
                     break;
-                id = Convert.ToInt32(e[n]);
-                xarray = (byte[])e[n + 2];
-                yarray = (byte[])e[n + 3];
+                id = e.GetInt(n);
+                xarray = e.GetByteArray(n + 2);
+                yarray = e.GetByteArray(n + 3);
                 for (int i = 0; i < xarray.Length; i += 2)
                 {
                     x = xarray[i] << 8 | xarray[i + 1];
                     y = yarray[i] << 8 | yarray[i + 1];
                     if (id < 500) array[x, y].Foreground = id;
                     if (id >= 500) array[x, y].Background = id;
-                    if (id == 43) array[x, y].Coins = Convert.ToInt32(e[n + 4]);
-                    if (id == 165) array[x, y].Coins = Convert.ToInt32(e[n + 4]);
-                    if (id == 77) array[x, y].Sound = Convert.ToInt32(e[n + 4]);
-                    if (id == 83) array[x, y].Sound = Convert.ToInt32(e[n + 4]);
-                    if (id == 242)
+                    switch (id)
                     {
-                        array[x, y].Rotation = Convert.ToInt32(e[n + 4]);
-                        array[x, y].ThisID = Convert.ToInt32(e[n + 5]);
-                        array[x, y].TargetID = Convert.ToInt32(e[n + 6]);
+                        case 43:
+                        case 165:
+                            array[x, y].Coins = e.GetInt(n + 4);
+                            n += 5;
+                            break;
+                        case 77:
+                        case 83:
+                            array[x, y].Sound = e.GetInt(n + 4);
+                            n += 5;
+                            break;
+                        case 242:
+                            array[x, y].Rotation = e.GetInt(n + 4);
+                            array[x, y].ThisID = e.GetInt(n + 5);
+                            array[x, y].TargetID = e.GetInt(n + 6);
+                            n += 7;
+                            break;
+                        default:
+                            n += 4;
+                            break;
                     }
                 }
-                n += 4;
-                if (id == 43 || id == 77 || id == 83 || id == 165)
-                    n += 1;
-                if (id == 242)
-                    n += 3;
             }
             return array;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        private Dictionary<int, int> Init2Pot(Message e)
+        {
+            Dictionary<int, int> ret = new Dictionary<int, int>();
+            uint n = 17;
+            while (n < e.Count)
+            {
+                if (e.GetString(n) == "ps")
+                    break;
+                n++;
+            }
+            n++;
+            while (n < e.Count)
+            {
+                if (e.GetString(n) == "pe")
+                    break;
+                ret.Add(e.GetInt(n), e.GetInt(n + 1));
+                n += 2;
+            }
+            return ret;
         }
 
         #endregion
