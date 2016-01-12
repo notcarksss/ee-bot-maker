@@ -1,0 +1,1 @@
+To create a library to facilitate the process of making any kind of bot for Everybody Edits.
