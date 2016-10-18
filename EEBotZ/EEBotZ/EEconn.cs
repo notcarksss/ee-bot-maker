@@ -48,7 +48,7 @@ namespace EEBotZ
         /// <summary>
         /// 
         /// </summary>
-        public int Version = 0;
+        public int Version = 0; //The version of Everybodyedits is v216
 
         /// <summary>
         /// 
