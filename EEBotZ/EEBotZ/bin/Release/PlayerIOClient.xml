@@ -44,25 +44,25 @@
         <member name="M:PlayerIOClient.PartnerPay.Trigger(System.String,PlayerIOClient.Callback)">
             <summary>Triggers the custom PartnerPay action identified by the given key</summary>
             <param name="key">The key of the action</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PartnerPay.Trigger(System.String,PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Triggers the custom PartnerPay action identified by the given key</summary>
             <param name="key">The key of the action</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PartnerPay.Trigger(System.String,System.UInt32,PlayerIOClient.Callback)">
             <summary>Triggers the custom PartnerPay action identified by the given key</summary>
             <param name="key">The key of the action</param>
             <param name="count">The number of actions to trigger</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PartnerPay.Trigger(System.String,System.UInt32,PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Triggers the custom PartnerPay action identified by the given key</summary>
             <param name="key">The key of the action</param>
             <param name="count">The number of actions to trigger</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PartnerPay.SetTag(System.String)">
@@ -72,12 +72,12 @@
         <member name="M:PlayerIOClient.PartnerPay.SetTag(System.String,PlayerIOClient.Callback)">
             <summary>Set (or change) the PartnerPay partner id of the connected user</summary>
             <param name="partnerId">The PartnerPay partner id</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PartnerPay.SetTag(System.String,PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Set (or change) the PartnerPay partner id of the connected user</summary>
             <param name="partnerId">The PartnerPay partner id</param>
-            <param name="successCallback">Callback that will be called if the action is succesful.</param>
+            <param name="successCallback">Callback that will be called if the action is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="P:PlayerIOClient.PartnerPay.CurrentPartner">
@@ -251,13 +251,13 @@
             <summary>Give coins to this Vault.</summary>
             <param name="coinAmount">The amount of coins to give.</param>
             <param name="reason">Your reason for giving the coins to this user. This will show up in the vault history, and in the PayVault admin panel for this user.</param>
-            <param name="successCallback">Callback that will be called if the credit is succesful.</param>
+            <param name="successCallback">Callback that will be called if the credit is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Credit(System.UInt32,System.String,PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Give coins to this Vault.</summary>
             <param name="coinAmount">The amount of coins to give.</param>
             <param name="reason">Your reason for giving the coins to this user. This will show up in the vault history, and in the PayVault admin panel for this user.</param>
-            <param name="successCallback">Callback that will be called if the credit is succesful.</param>
+            <param name="successCallback">Callback that will be called if the credit is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Debit(System.UInt32,System.String)">
@@ -269,13 +269,13 @@
             <summary>Take coins from this Vault</summary>
             <param name="coinAmount">The amount of coins to take.</param>
             <param name="reason">Your reason for taking the coins from this user. This will show up in the vault history, and in the PayVault admin panel for this user.</param>
-            <param name="successCallback">Callback that will be called if the debit is succesful.</param>
+            <param name="successCallback">Callback that will be called if the debit is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Debit(System.UInt32,System.String,PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Take coins from this Vault</summary>
             <param name="coinAmount">The amount of coins to take.</param>
             <param name="reason">Your reason for taking the coins from this user. This will show up in the vault history, and in the PayVault admin panel for this user.</param>
-            <param name="successCallback">Callback that will be called if the debit is succesful.</param>
+            <param name="successCallback">Callback that will be called if the debit is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Consume(PlayerIOClient.VaultItem[])">
@@ -285,12 +285,12 @@
         <member name="M:PlayerIOClient.PayVault.Consume(PlayerIOClient.VaultItem[],PlayerIOClient.Callback)">
             <summary>Consume items in this Vault. This will cause them to be removed, but this action will not show up in the vault history.</summary>
             <param name="items">The VaultItems to use from the users vault - this should be instances from the Items array property.</param>
-            <param name="successCallback">Callback that will be called if the use is succesful.</param>
+            <param name="successCallback">Callback that will be called if the use is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Consume(PlayerIOClient.VaultItem[],PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Consume items in this Vault. This will cause them to be removed, but this action will not show up in the vault history.</summary>
             <param name="items">The VaultItems to use from the users vault - this should be instances from the Items array property.</param>
-            <param name="successCallback">Callback that will be called if the use is succesful.</param>
+            <param name="successCallback">Callback that will be called if the use is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Buy(System.Boolean,PlayerIOClient.BuyItemInfo[])">
@@ -302,13 +302,13 @@
             <summary>Buy items with Coins.</summary>
             <param name="storeItems">If true, the items will be stored in the Vault. If false, the items will be consumed immediately after purchase.</param>
             <param name="items">A list of items to buy, together with any additional payload.</param>
-            <param name="successCallback">Callback that will be called if the buy is succesful.</param>
+            <param name="successCallback">Callback that will be called if the buy is successful.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Buy(System.Boolean,PlayerIOClient.BuyItemInfo[],PlayerIOClient.Callback,PlayerIOClient.Callback{PlayerIOClient.PlayerIOError})">
             <summary>Buy items with Coins.</summary>
             <param name="storeItems">If true, the items will be stored in the Vault. If false, the items will be consumed immediately after purchase.</param>
             <param name="items">A list of items to buy, together with any additional payload.</param>
-            <param name="successCallback">Callback that will be called if the buy is succesful.</param>
+            <param name="successCallback">Callback that will be called if the buy is successful.</param>
             <param name="errorCallback">Callback that will be called instead of successCallback if an error occurs.</param>
         </member>
         <member name="M:PlayerIOClient.PayVault.Give(PlayerIOClient.BuyItemInfo[])">
